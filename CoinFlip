@@ -1,0 +1,65 @@
+// Write a program that reads an arbitrary number of integers that are in the range of 0 to 100 inclusive.  This array will count how many occurrences of each are entered.  Indicate the end of input by a value outside the range.  Print all of the values (with the number of occurrences) that were entered zero or more times.
+
+public class CoinFlip
+{
+	public static void main(String[] args) {
+		int tails1=0, heads1=0, tails2=0, heads2=0, totalFlips=0;
+		
+		Coin coin1 = new Coin();
+		Coin coin2 = new Coin();
+		
+		while ( tails1<3 && tails2<3 ) {
+		    coin1.flip();
+		    coin2.flip();
+		    System.out.println(coin1.toString());
+		    System.out.println(coin2.toString());
+      
+		    if (coin1.isHEADS())
+		        heads1++;
+		    else
+		        tails1++;
+		    if (coin2.isHEADS())
+		        heads2++;
+		    else
+		        tails2++;
+		    totalFlips++;
+		}
+		
+		System.out.println("Tails to come up 3 times: " + totalFlips);
+		totalFlips=0;
+		
+		while ( tails1<7 && tails2<7 ) {
+		    coin1.flip();
+		    coin2.flip();
+		    System.out.println(coin1.toString());
+		    System.out.println(coin2.toString());
+		    if (coin1.isHEADS())
+		        heads1++;
+		    else
+		        tails1++;
+		    if (coin2.isHEADS())
+		        heads2++;
+		    else
+		        tails2++;
+		    totalFlips++;
+		}
+		System.out.println("Tails to come up 7 times: " + totalFlips);
+		totalFlips=0;
+		
+		while ( heads1<1000 && heads2<1000 ) {
+		    coin1.flip();
+		    coin2.flip();
+		    if (coin1.isHEADS())
+		        heads1++;
+		    else
+		        tails1++;
+		    if (coin2.isHEADS())
+		        heads2++;
+		    else
+		        tails2++;
+		    totalFlips++;
+		}
+		System.out.println("Heads to be flipped 1,000 times: " + totalFlips);
+		totalFlips=0;
+	}
+}
